@@ -41,22 +41,13 @@ export default function Home({ allPostsData, list }) {
 				<ul className={utilStyles.list}>
 					{allPostsData.map(({ id, date, title }) => (
 						<li className={utilStyles.listItem} key={id}>
-							{title}
-							<br />
-							{id}
-							<br />
-							{date}
+							<Link href="/posts/[id]" as={`/posts/${id}`}>
+								<a>{title}</a>
+							</Link>
 						</li>
 					))}
 				</ul>
 			</section>
-			<>
-				{list.map((num) => (
-					<div key={num} className="number">
-						{num}
-					</div>
-				))}
-			</>
 			<style jsx>
 				{`
 					.number {
