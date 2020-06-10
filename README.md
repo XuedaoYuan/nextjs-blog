@@ -124,3 +124,20 @@ function Profile() {
 
 ### 动态路由Dynamic Routes
 
+[id].js
+
+
+
+[…id.js] 会匹配 `/posts/a、/posts/a/b` 但是getStaticProps的params的id会返回一个数组
+
+### API路由
+
+```
+export default (req, res) => {
+  res.status(200).json({ text: 'Hello' })
+}
+```
+
+处理request
+
+也可以直接存储数据到database
