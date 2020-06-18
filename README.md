@@ -1,3 +1,7 @@
+```
+create-next-app app_name
+```
+
 pages下面目录结构就是路由
 
 public文件夹下面的内容可以存放静态资源
@@ -12,6 +16,11 @@ Link
 import Link from 'next/link'
 
 <Link href="/posts/first-post"><a>this page!</a></Link>
+
+// 跳转到动态的路由 as也可以是动态的
+<Link href="/blog/[slug]" as="/blog/hello-world">
+	<a>To Hello World Blog post</a>
+</Link>
 ```
 
 2、Head 可以定制html head内容
@@ -141,3 +150,24 @@ export default (req, res) => {
 处理request
 
 也可以直接存储数据到database
+
+### 环境变量
+
+Next.js allows you to set defaults in `.env` (all environments), `.env.development` (development environment), and `.env.production` (production environment).
+
+`.env.local` always overrides the defaults set.
+
+```
+process.env['variable_name']
+```
+
+.env.local一般是保存私密信息，
+
+> **Note**: `.env`, `.env.development`, and `.env.production` files should be included in your repository as they define defaults. **.env\*.local should be added to .gitignore**, as those files are intended to be ignored. `.env.local` is where secrets can be stored.
+
+
+
+### useRouter
+
+可以使用useRouter  hook获取路由对象
+
